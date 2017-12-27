@@ -1,2 +1,2 @@
-import { movies } from './data.js';
+import { moviesData } from './data.js';
 
