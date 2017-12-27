@@ -16,6 +16,6 @@ function getData(url) {
         .catch(error => console.warn(error));
 }
 
-export var movies = [];
+export var moviesData = [];
 getData('https://pastebin.com/9yXnuQwZ')
-    .then(responseData => { movies.push(responseData)});
+    .then(responseData => { moviesData.push(responseData)});
