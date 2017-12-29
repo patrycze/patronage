@@ -1,0 +1,11 @@
+#moviesCounterAll {
+    font-weight: bold;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+#moviesCounterSeen {
+    font-weight: bold;
+}

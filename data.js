@@ -1,6 +1,5 @@
 function getData(url) {  
     const correctUrl = [url.slice(0, 21), 'raw/', url.slice(21)].join('');
-
     return fetch(correctUrl, 
         {
             method: "GET",
@@ -11,11 +10,13 @@ function getData(url) {
         })
         .then((response) => response.json())
         .then((responseData) => {
-            return responseData;
+            setTimeout(function(){
+             moviesData = responseData;
+              }, 250);
         })
         .catch(error => console.warn(error));
 }
 
-export var moviesData = [];
+export var moviesData;
+
 getData('https://pastebin.com/9yXnuQwZ')
-    .then(responseData => { moviesData.push(responseData)});
