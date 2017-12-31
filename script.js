@@ -16,8 +16,8 @@ function moviesCounterSeenOnUI() {
     moviesCounterSeen.textContent = moviesCounterSeen_value;
 }
 
-function changeSeenStatusInData() {
-
+function changeSeenStatusInData(movie, status) {
+    movie.seen = status;
 }
 
 function changeSeenStatus(btn, movie) {
@@ -26,18 +26,15 @@ function changeSeenStatus(btn, movie) {
             btn.style.color = '#f47121';
             changeMoviesCounterSeen(1)
             moviesCounterSeenOnUI()
-            movie.seen = "T"
-            console.log(moviesData)
+            changeSeenStatusInData(movie, "T");
+            
         }
     else   
         {
             btn.style.color = '';
             changeMoviesCounterSeen(-1)
             moviesCounterSeenOnUI()
-            movie.seen = "N" 
-            console.log(moviesData)
-            
-
+            changeSeenStatusInData(movie, "N");
         }
 }
 
@@ -54,14 +51,17 @@ setTimeout(function(){
             let span = createNode('span');
             let btn = createNode('i');
 
-            btn.id = `btn-${index}`;
             btn.className = `btn`;
+            
+            btn.id = `btn-${index}`;
+            span.id = `span-${index}`
+            
+            span.onmouseover = function() { span.style.textShadow="1px 1px 5px grey"  }
+            span.onmouseout = function() { span.style.textShadow=""  }            
             btn.onclick = function() { changeSeenStatus(btn, movie) };
             
-            console.log(movie);
-            
-            span.innerHTML = `${movie.title}`;
-            btn.innerHTML = ` &#10003`;
+            span.innerHTML = `${movie.title}, ${movie.year}, ${movie.genre}, ${movie.summary}`;
+            btn.innerHTML = ` &#10003 <br></br>`;
             
             append(span, btn);
             append(li, span);
@@ -74,5 +74,5 @@ setTimeout(function(){
             }
         });
         
-     }, 1000);
+     }, 3000);
 

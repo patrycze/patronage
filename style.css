@@ -9,3 +9,22 @@
 #moviesCounterSeen {
     font-weight: bold;
 }
+
+
+#moviesCountersContainer { 
+    margin-top: 0px;
+    float: right;
+}
+
+#moviesListContainer {
+    display: block; 
+    clear: both;
+    margin-top: 100px;
+    text-align: center;
+}
+
+/* 
+#moviesList:hover {
+    text-shadow: 0 0 3px;
+
+} */

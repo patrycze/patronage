@@ -12,7 +12,7 @@ function getData(url) {
         .then((responseData) => {
             setTimeout(function(){
              moviesData = responseData;
-              }, 250);
+              }, 2000);
         })
         .catch(error => console.warn(error));
 }
