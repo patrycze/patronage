@@ -8,6 +8,7 @@
 
 #moviesCounterSeen {
     font-weight: bold;
+    
 }
 
 
@@ -16,12 +17,6 @@
     float: right;
 }
 
-/* #moviesListContainer {
-    display: block; 
-    clear: both;
-    margin-top: 100px;
-    text-align: center;
-} */
  #moviesListContainer {
     width: 600px;
     clear: both;
@@ -30,6 +25,6 @@
     margin-right: auto;
 }
 
-#moviesList {
-    display: inline-block;
-} 
+.span:hover {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4)
+}
