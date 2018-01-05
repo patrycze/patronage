@@ -20,22 +20,42 @@ function changeSeenStatusInData(movie, status) {
     movie.seen = status;
 }
 
-function changeSeenStatus(btn, movie) {
-    if (btn.style.color == '')
-        {
-            btn.style.color = '#f47121';
-            changeMoviesCounterSeen(1)
-            moviesCounterSeenOnUI()
-            changeSeenStatusInData(movie, "T");
+function changeIconState(icon) {
+    icon.style.color ?  icon.style.color = '' : icon.style.color = '#f47121'; 
+}
+
+function changeSeenStatus(icon, movie) {
+    // if (btn.style.color == '')
+    //     {
+    //         btn.style.color = '#f47121';
+    //         changeMoviesCounterSeen(1)
+    //         moviesCounterSeenOnUI()
+    //         changeSeenStatusInData(movie, "T");
             
-        }
-    else   
-        {
-            btn.style.color = '';
-            changeMoviesCounterSeen(-1)
-            moviesCounterSeenOnUI()
-            changeSeenStatusInData(movie, "N");
-        }
+    //     }
+    // else   
+    //     {
+    //         btn.style.color = '';
+    //         changeMoviesCounterSeen(-1)
+    //         moviesCounterSeenOnUI()
+    //         changeSeenStatusInData(movie, "N");
+    //     }
+    console.log(movie);
+
+    if(movie.seen === "F") {
+        //btn.style.color = '#f47121';
+        changeIconState(icon)
+        changeMoviesCounterSeen(1)
+        moviesCounterSeenOnUI()
+        changeSeenStatusInData(movie, "T"); 
+    } 
+    else {
+        //btn.style.color = '';
+        changeIconState(icon)
+        changeMoviesCounterSeen(-1)
+        moviesCounterSeenOnUI()
+        changeSeenStatusInData(movie, "F");
+    }
 }
 
 let moviesCounterSeen_value = 0;
@@ -49,30 +69,30 @@ setTimeout(function(){
         
         let li = createNode('li');
         let span = createNode('span');
-        let btn = createNode('i');
+        let icon = createNode('i');
 
-        btn.className = `btn`;
+        icon.className = `icon`;
         
-        btn.id = `btn-${index}`;
+        icon.id = `icon-${index}`;
         span.id = `span-${index}`;
 
         
-        span.className = `span`;
-        //span.onmouseover = function() { span.style.textShadow="1px 1px 5px grey"  }
-        span.onmouseout = function() { span.style.textShadow=""  }            
-        btn.onclick = function() { changeSeenStatus(btn, movie) };
+        span.className = `span`;          
+        icon.onclick = function() { changeSeenStatus(icon, movie) };
         
         span.innerHTML = `${movie.title}, ${movie.year}, ${movie.genre}, ${movie.summary}`;
-        btn.innerHTML = ` &#10003 <br></br>`;
+        icon.innerHTML = ` &#10003 <br></br>`;
         
-        append(span, btn);
+        append(span, icon);
         append(li, span);
         append(ul, li);
         
         moviesCounterAll.textContent = moviesData.length;
-            
-        if(movie.seen === "T") {
-            changeSeenStatus(btn, movie); 
+        console.log(movie);
+        if(movie.seen == "T") {
+            changeMoviesCounterSeen(1)
+            moviesCounterSeenOnUI()
+            changeIconState(icon)
         }
     }); 
 }, 400);
