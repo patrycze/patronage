@@ -72,7 +72,6 @@ setTimeout(function(){
             if(movie.seen === "T") {
                 changeSeenStatus(btn, movie); 
             }
-        });
-        
-     }, 3000);
+        }); 
+     }, 400);
 

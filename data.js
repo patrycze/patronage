@@ -8,11 +8,11 @@ function getData(url) {
             'Content-Type': 'application/json',
             }
         })
-        .then((response) => response.json())
+        .then((response) => {
+            return response.json();
+        })
         .then((responseData) => {
-            setTimeout(function(){
              moviesData = responseData;
-              }, 2000);
         })
         .catch(error => console.warn(error));
 }

@@ -16,15 +16,20 @@
     float: right;
 }
 
-#moviesListContainer {
+/* #moviesListContainer {
     display: block; 
     clear: both;
     margin-top: 100px;
     text-align: center;
+} */
+ #moviesListContainer {
+    width: 600px;
+    clear: both;
+    text-align: center;
+    margin-left: auto; 
+    margin-right: auto;
 }
 
-/* 
-#moviesList:hover {
-    text-shadow: 0 0 3px;
-
-} */
+#moviesList {
+    display: inline-block;
+} 
