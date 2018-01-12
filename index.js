@@ -1,4 +1,11 @@
-import { moviesData } from './data.js';
+//import { moviesData } from './data.js';
+import { MoviesStorage } from './movies-storage.js';
+
+
+
+
+const movies = new MoviesStorage();
+
 
 function createNode(element) {
     return document.createElement(element);
@@ -48,7 +55,7 @@ function changeMoviesCounterSeen(value) {
 }
 
 setTimeout(function(){
-    moviesData.map((movie, index) => {
+    movies.get1().map((movie, index) => {
         
         let li = createNode('li');
         let span = createNode('span');
@@ -70,7 +77,7 @@ setTimeout(function(){
         append(li, span);
         append(ul, li);
         
-        moviesCounterAll.textContent = moviesData.length;
+        moviesCounterAll.textContent = movies.get1().length;
         
         if(movie.seen == "T") {
             changeMoviesCounterSeen(1)
