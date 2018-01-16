@@ -74,7 +74,6 @@ validate(e) {
         
         let el = document.querySelector(field);
         let elVal = el.value;
-        //console.log(this.els);
         if(elFields[field].required) {
             console.log(elVal.length);
             if(elVal.length === 0) {
@@ -104,7 +103,6 @@ validate(e) {
     }
 
     if(this.valitationErrors.length == 0) {
-       // this.movies['movies'].includes(document.getElementById('title_input').value)
        console.log(this.checkTitleInArray());
        if(!this.checkTitleInArray()) {
            let seen = document.getElementById('checkBox').checked ? "T" : "F";
@@ -164,16 +162,14 @@ const form = new Validator('#form1', {
     fields: {
         '#title_input': {
             required: true,
-            //maxlength: 2
         },
         '#year_input': {
             required: true,
-             //length: 4,
+             length: 4,
              type: 'number'
         },
         '#genre_input': {
             required: true,
-            //maxlength: 2
         }
     }
 })

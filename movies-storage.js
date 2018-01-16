@@ -6,13 +6,9 @@ export class MoviesStorage {
             if(this.movies) {
                 if(typeof(this.movies) === 'Array') { }
                 else {
-                  //  this.movies = [];
-                    console.log('1')
                     this.getData('https://pastebin.com/9yXnuQwZ')    
                 }
             } else {
-                //this.movies = [];
-                console.log('2')
                 this.getData('https://pastebin.com/9yXnuQwZ')          
             }
 
@@ -25,17 +21,12 @@ export class MoviesStorage {
 
     get2(id) {
         
-        let promise = new Promise((resolve, reject) => {
-            resolve(this.getData);
-        })
 
-        promise.then((resolve) =>{
-            console.log('jusz')
-            this.movies.forEach(function(movie) {
-                if(movie.id === id)
-                    return movie;
-            })
+        this.movies.forEach(function(movie) {
+            if(movie.id === id)
+                return movie;
         })
+    
     }
 
     set1(data) {
