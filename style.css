@@ -32,6 +32,11 @@
 /* ADD.js ======================= */
 
 
+
+#error {
+    line-height: 0.1px;
+}
+
 #formContainer {
     text-align: center;
 }

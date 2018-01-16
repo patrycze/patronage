@@ -1,6 +1,5 @@
-//import { moviesData } from './data.js';
 import { MoviesStorage } from './movies-storage.js';
-
+import { setCounterTo } from './movies-counter.js';
 
 
 
@@ -16,11 +15,10 @@ function append(parent, el) {
 }
 
 const ul = document.getElementById('moviesList');
-const moviesCounterAll = document.getElementById('moviesCounterAll');
-const moviesCounterSeen = document.getElementById('moviesCounterSeen');
+
 
 function moviesCounterSeenOnUI() {
-    moviesCounterSeen.textContent = moviesCounterSeen_value;
+    setCounterTo('#moviesCounterSeen', moviesCounterSeen_value)
 }
 
 function changeSeenStatusInData(movie, status) {
@@ -33,14 +31,12 @@ function changeIconState(icon) {
 
 function changeSeenStatus(icon, movie) {
     if(movie.seen === "F") {
-        //btn.style.color = '#f47121';
         changeIconState(icon)
         changeMoviesCounterSeen(1)
         moviesCounterSeenOnUI()
         changeSeenStatusInData(movie, "T"); 
     } 
     else {
-        //btn.style.color = '';
         changeIconState(icon)
         changeMoviesCounterSeen(-1)
         moviesCounterSeenOnUI()
@@ -77,7 +73,7 @@ setTimeout(function(){
         append(li, span);
         append(ul, li);
         
-        moviesCounterAll.textContent = movies.get1().length;
+        setCounterTo('#moviesCounterAll', movies.get1().length)
         
         if(movie.seen == "T") {
             changeMoviesCounterSeen(1)
@@ -85,5 +81,5 @@ setTimeout(function(){
             changeIconState(icon)
         }
     }); 
-}, 400);
+}, 500);
 

@@ -1,3 +1,3 @@
-function setCounterTo(element, value) {
-    element.innerHTML = value;
+export function setCounterTo(element, value) {
+    document.querySelector(element).innerHTML = value;
 }

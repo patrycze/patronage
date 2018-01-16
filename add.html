@@ -18,36 +18,37 @@
     <div id="formContainer">
             <h1 id="header-title">Add film</h1>
         <form id="form1"> 
-                <fieldset>
-            <table cellspacing = "2" cellpadding = "2"> 
+            <table id="table1" cellspacing = "2" cellpadding = "2"> 
                     <tr> 
                         <td align = "right">Title</td> 
-                        <td><input placeholder="enter title" id="title_input" type = "text" name = "Title"/></td>
+                        <td><input placeholder="enter title" id="title_input" class="1" type = "text" name = "Title"/></td>
                     </tr> 
                     <tr> 
                         <td align = "right">Year</td> 
-                        <td><input placeholder="enter year" id="year_input" type = "text" name = "Year" /></td> 
-                    </tr> 
+                        <td><input placeholder="enter year" id="year_input" type = "text" class="2" name = "Year" /></td>
+                        
+                    </tr>
                     <tr> 
                         <td align = "right">Genre</td> 
-                        <td><input placeholder="enter genre" id="genre_input" type = "text" name = "Genre" /></td> 
+                        <td><input placeholder="enter genre" id="genre_input" type = "text" class="3" name = "Genre" /></td> 
                     </tr> 
                     <tr> 
                         <td align = "right">Summary</td> 
-                        <td> <textarea placeholder="enter summary" id="summary_input" name="Summary" maxlength="140" rows="5"></textarea></td> 
+                        <td> <textarea placeholder="enter summary" id="summary_input" name="Summary" class="4" maxlength="140" rows="5"></textarea></td> 
                     </tr> 
                     <tr> 
-                        <td align = "right">Seen?</td> 
-                        <td></td> 
+                        <td class="5" align = "right">Seen?</td> 
+                        <td><input style="width: 50px; height: 50px; cursor: pointer;" id="checkBox" type="checkbox"></td> 
                     </tr> 
                     <tr> 
-                            <td colspan="2" style="text-align: center;"><input type="submit" class="submit" value="Submit"></td> 
+                            <td class="6" colspan="2" style="text-align: center;"><input type="submit" class="submit" value="Submit"></td> 
                         </tr>  
                 </table> 
-            </fieldset>
         </form>
     </div>
     <script type="module" src="add.js"></script>
+    <script type="module" src="movies-storage.js"></script>
+    <script type="module" src="movies-counter.js"></script>
 </body>
 </body>
 </html>
